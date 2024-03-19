@@ -5,7 +5,7 @@ import Home from "./pages/home.page";
 
 export default function App() {
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider theme={theme} forceColorScheme="dark">
       <Home />
     </MantineProvider>
   );
