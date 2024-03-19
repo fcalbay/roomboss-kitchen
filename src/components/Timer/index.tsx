@@ -1,11 +1,11 @@
-import { useDeferredValue, useEffect, useState } from 'react';
-import { ColorSwatch, Flex } from '@mantine/core';
-import { TimerProps, formatStatus } from './helper';
-import { formatTime } from '@/utils/time';
+import { useDeferredValue, useEffect, useState } from "react";
+import { ColorSwatch, Flex } from "@mantine/core";
+import { TimerProps, formatStatus } from "./helper";
+import { formatTime } from "@/utils/time";
 
 const Timer = ({ date }: TimerProps) => {
   const [elapsedSeconds, setElapsedSeconds] = useState<number>(
-    Math.floor((new Date().getTime() - date.getTime()) / 1000)
+    Math.floor((new Date().getTime() - date.getTime()) / 1000),
   );
   const deferredSeconds = useDeferredValue(elapsedSeconds);
 

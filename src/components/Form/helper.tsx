@@ -1,11 +1,11 @@
-import { Order } from '@/types/order.type';
+import { Order } from "@/types/order.type";
 
-export type OrderFormType = Omit<Order, 'id' | 'createdAt'>;
+export type OrderFormType = Omit<Order, "id" | "createdAt">;
 
 export const initialValues: OrderFormType = {
-  item: 'Hamburger',
+  item: "Hamburger",
   quantity: 1,
-  tableNo: '',
+  tableNo: "",
 };
 
 export interface FormProps {

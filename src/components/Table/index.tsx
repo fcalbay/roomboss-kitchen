@@ -1,7 +1,7 @@
-import { Box, Button, Table, Text } from '@mantine/core';
-import useOrderStore from '@/stores/orders.store';
-import Timer from '../Timer';
-import { Order } from '@/types/order.type';
+import { Box, Button, Table, Text } from "@mantine/core";
+import useOrderStore from "@/stores/orders.store";
+import Timer from "../Timer";
+import { Order } from "@/types/order.type";
 
 const OrdersTable = () => {
   const orders = useOrderStore((state) => state.pendingOrders);
@@ -18,16 +18,24 @@ const OrdersTable = () => {
         <Table.Td maw={100}>{item}</Table.Td>
         <Table.Td maw={100}>{quantity}</Table.Td>
         <Table.Td maw={200}>
-          <Text style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>{tableNo}</Text>
+          <Text style={{ textOverflow: "ellipsis", overflow: "hidden" }}>
+            {tableNo}
+          </Text>
         </Table.Td>
         <Table.Td maw={200}>
-          <Text style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>{notes}</Text>
+          <Text style={{ textOverflow: "ellipsis", overflow: "hidden" }}>
+            {notes}
+          </Text>
         </Table.Td>
         <Table.Td maw={100}>
           <Timer date={createdAt} />
         </Table.Td>
         <Table.Td align="right">
-          <Button bg="green" size="sm" onClick={() => handleCompleteOrder(order)}>
+          <Button
+            bg="green"
+            size="sm"
+            onClick={() => handleCompleteOrder(order)}
+          >
             Complete
           </Button>
         </Table.Td>
