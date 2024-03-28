@@ -1,14 +1,9 @@
-const HAMBURGER = "Hamburger";
-const FRIES = "Fries";
-const RIBEYE_STEAK = "Ribeye steak";
-const CHICKEN_ALFREDO_FETTUCINE = "Chicken Alfredo Fettucine";
+const HAMBURGER = 'Hamburger';
+const FRIES = 'Fries';
+const RIBEYE_STEAK = 'Ribeye steak';
+const CHICKEN_ALFREDO_FETTUCINE = 'Chicken Alfredo Fettucine';
 
-export const MENU = [
-  HAMBURGER,
-  FRIES,
-  RIBEYE_STEAK,
-  CHICKEN_ALFREDO_FETTUCINE,
-] as const;
+export const MENU = [HAMBURGER, FRIES, RIBEYE_STEAK, CHICKEN_ALFREDO_FETTUCINE] as const;
 
 export interface Order {
   id: string;

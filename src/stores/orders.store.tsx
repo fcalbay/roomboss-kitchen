@@ -1,5 +1,5 @@
-import { create } from "zustand";
-import { CompletedOrder, Order } from "@/types/order.type";
+import { create } from 'zustand';
+import { CompletedOrder, Order } from '@/types/order.type';
 
 interface OrderState {
   pendingOrders: Order[];
@@ -11,17 +11,11 @@ interface OrderState {
 const useOrderStore = create<OrderState>((set) => ({
   pendingOrders: [],
   completedOrders: [],
-  addOrder: (order: Order) =>
-    set((state) => ({ pendingOrders: [...state.pendingOrders, order] })),
+  addOrder: (order: Order) => set((state) => ({ pendingOrders: [...state.pendingOrders, order] })),
   completeOrder: (completedOrder: Order) =>
     set((state) => ({
-      pendingOrders: state.pendingOrders.filter(
-        ({ id }) => id !== completedOrder.id,
-      ),
-      completedOrders: [
-        ...state.completedOrders,
-        { ...completedOrder, completedOn: new Date() },
-      ],
+      pendingOrders: state.pendingOrders.filter(({ id }) => id !== completedOrder.id),
+      completedOrders: [...state.completedOrders, { ...completedOrder, completedOn: new Date() }],
     })),
 }));
 

@@ -1,7 +1,7 @@
-import { Button, Card, Flex, Group, Stack, Text } from "@mantine/core";
-import useOrderStore from "@/stores/orders.store";
-import Timer from "@/components/Timer";
-import { Order } from "@/types/order.type";
+import { Button, Card, Flex, Group, Stack, Text } from '@mantine/core';
+import useOrderStore from '@/stores/orders.store';
+import Timer from '@/components/Timer';
+import { Order } from '@/types/order.type';
 
 const OrderCards = () => {
   const orders = useOrderStore((state) => state.pendingOrders);
@@ -23,7 +23,7 @@ const OrderCards = () => {
             </Text>
             <Text
               fw={500}
-              style={{ textOverflow: "ellipsis", overflow: "hidden" }}
+              style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}
               maw={100}
               visibleFrom="xs"
             >
@@ -33,31 +33,20 @@ const OrderCards = () => {
           </Group>
         </Card.Section>
         <Card.Section inheritPadding py="xs" hiddenFrom="xs">
-          <Text
-            fw={500}
-            style={{ textOverflow: "ellipsis", overflow: "hidden" }}
-          >
+          <Text fw={500} style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>
             {tableNo}
           </Text>
         </Card.Section>
         {notes && (
           <Card.Section inheritPadding py="xs" bg="white" color="black">
-            <Text
-              fw={300}
-              c="black"
-              style={{ textOverflow: "ellipsis", overflow: "hidden" }}
-            >
+            <Text fw={300} c="black" style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>
               {notes}
             </Text>
           </Card.Section>
         )}
         <Card.Section inheritPadding py="xs" bg="white" color="black">
           <Flex justify="end">
-            <Button
-              bg="green"
-              size="sm"
-              onClick={() => handleCompleteOrder(order)}
-            >
+            <Button bg="green" size="sm" onClick={() => handleCompleteOrder(order)}>
               Complete
             </Button>
           </Flex>

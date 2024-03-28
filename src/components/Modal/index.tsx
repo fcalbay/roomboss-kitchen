@@ -1,6 +1,6 @@
-import { useDisclosure } from "@mantine/hooks";
-import { Button, Modal, Center } from "@mantine/core";
-import Form from "@/components/Form";
+import { useDisclosure } from '@mantine/hooks';
+import { Button, Modal, Center } from '@mantine/core';
+import Form from '@/components/Form';
 
 const OrderModal = () => {
   const [opened, { open, close }] = useDisclosure(false);
